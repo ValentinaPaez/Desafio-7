@@ -1,33 +1,62 @@
-.container  {
-    display:grid;
+.container {
+    display: grid;
     grid-template-areas:
-    "header header header"
-    "sidebar main main"
-    "footer footer footer"
-    ;
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    grid-template-columns: 200px auto; /* Columna de la barra lateral y el contenido principal */
+    grid-template-rows: auto auto auto; /* Ajusta la altura automáticamente */
 }
 
-.header     {
-    grid-area:header;
+.header {
+    grid-area: header;
     text-align: center;
     padding: 20px;
-
-
+    background-color: rgb(248, 196, 233);
+    color: black;
 }
 
-.sidebar    {
-    grid-area:sidebar;
-
+.sidebar-container {
+    grid-area: sidebar;
+    background-color: #f0f0f0;
+    padding: 20px;
 }
 
-.main   {
-    grid-area:main;
-
+.sidebar {
+    display: flex;
+    flex-direction: column;
 }
 
-.footer     {
-    grid-area:footer;
+.main {
+    grid-area: main;
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido principal hacia el extremo derecho */
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan si el espacio es insuficiente */
+}
+
+.card {
+    width: calc(33.33% - 20px); /* Calcula el ancho de la tarjeta con el espacio de margen */
+    margin: 10px; /* Agrega espacio entre las tarjetas */
+}
+
+.footer {
+    grid-area: footer;
     padding: 20px;
     text-align: center;
+    background-color: rgb(248, 196, 233);
+    color:black;
+}
 
+.card .btn-primary  {
+    background-color: rgb(248, 196, 233);
+    color: black;
+    border-color: rgb(248, 196, 233);
+}
+
+.card .btn-primary:hover {
+    background-color: rgb(241, 66, 192);
 }
